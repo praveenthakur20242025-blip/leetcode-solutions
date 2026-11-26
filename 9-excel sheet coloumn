@@ -1,19 +1,43 @@
-class Solution {
-    public String convertToTitle(int columnNumber) {
-        StringBuilder ans = new StringBuilder();
+import java.util.*;
 
-        while (columnNumber > 0) {
-            columnNumber--;
+class ProductB {
+    private int pid;
+    private String pName;
+    private float pPrice;
 
-            int rem = columnNumber % 26;
+    public ProductB(int pid, String pName, float pPrice) {
+        this.pid = pid;
+        this.pName = pName;
+        this.pPrice = pPrice;
+    }
 
-            char ch = (char)('A' + rem);
+    public int getPid() {
+        return pid;
+    }
 
-            ans.append(ch);
+    public String getPName() {
+        return pName;
+    }
 
-            columnNumber = columnNumber / 26;
-        }
+    public float getPPrice() {
+        return pPrice;
+    }
+}
+    void displayProduct() {
+        System.out.println(pId + "/" + pName + "/" + pPrice);
+    }
 
-        return ans.reverse().toString();
+
+class PriceComparator implements Comparator<ProductN>{
+    @Override
+    public int compare(ProductN o1, ProductN o2) {
+        return (int)(o1.getpPrice() - o2.getpPrice());
+    }
+}
+
+class PriceRevComparator implements Comparator<ProductN>{
+    @Override
+    public int compare(ProductN o1, ProductN o2) {
+        return (int)(o2.getpPrice() - o1.getpPrice());
     }
 }
